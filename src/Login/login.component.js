@@ -31,17 +31,16 @@ class Login extends Component {
 
         submitForm(event) {
                 event.preventDefault();
-                // alert('username: ' +  this.state.username + ' and password: ' + this.state.password);
-                // fetch('https://putsreq.com/kTdx7ZRlzmkKhvT0OlEr',{
-                //         method: 'post',
-                //         body: {
-                //                 'username': this.state.username,
-                //                 'password': this.state.password
-                //         }
-                // }).then(res => res.json()).then(function(data) { 
-                //         console.log(data);
-                //         alert(JSON.stringify(data));
-                //  });
+                fetch('https://putsreq.com/kTdx7ZRlzmkKhvT0OlEr',{
+                        method: 'post',
+                        body: JSON.stringify({
+                                'username': this.state.username,
+                                'password': this.state.password
+                        })
+                }).then(res => res.json()).then(function(data) { 
+                        console.log(data);
+                        alert(JSON.stringify(data));
+                 });
 
                 //  fetch('https://1nimmg3p7f.execute-api.us-east-1.amazonaws.com/prod/aboveline_jr_test_service', {
                 //         method: 'POST',
